@@ -23,5 +23,6 @@ stages:
       - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\test.csv
       - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\model.pkl
     outs:
-      - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\metrics.json
       - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\confusion_matrix.png
+    metrics:
+      - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\metrics.json
