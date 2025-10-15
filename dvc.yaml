@@ -22,7 +22,15 @@ stages:
       - validate.py
       - test.csv
       - model.pkl
-    outs:
-      - confusion_matrix.png
     metrics:
       - metrics.json
+    plots:
+      - metrics.json:
+          template: default
+          x: branch
+          y:
+            - accuracy
+            - f1_score
+            - precision
+            - recall
+      - confusion_matrix.png
