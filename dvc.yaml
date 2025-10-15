@@ -25,13 +25,9 @@ stages:
     outs:
       - confusion_matrix.png
     metrics:
-      - metrics.json
+      - metrics.json  # tracked numeric metrics
     plots:
-      - path: metrics.json
-        template: default
-        x: branch
-        y:
-          - accuracy
-          - f1_score
-          - precision
-          - recall
+      - metrics.json:   # tracked as plots
+          template: default
+          x: branch
+          y: [accuracy, f1_score, precision, recall]
