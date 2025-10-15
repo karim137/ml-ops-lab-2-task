@@ -22,7 +22,7 @@ stages:
       - validate.py
       - test.csv
       - model.pkl
-    outs:
-      - confusion_matrix.png
     metrics:
       - metrics.json
+    plots:
+      - confusion_matrix.png
