@@ -1,4 +1,21 @@
 stages:
+  preprocess:
+    cmd: python preprocess.py
+    deps:
+      - preprocess.py
+      - diabetes.csv
+    outs:
+      - train.csv
+      - test.csv
+
+  train:
+    cmd: python train.py
+    deps:
+      - train.py
+      - train.csv
+    outs:
+      - model.pkl
+
   validate:
     cmd: python validate.py
     deps:
@@ -6,16 +23,6 @@ stages:
       - test.csv
       - model.pkl
     metrics:
-      - metrics.json:
-          cache: false
+      - metrics.json
     plots:
-      - confusion_matrix.png:
-          cache: false
-      - metrics.json:
-          cache: false
-          x: branch
-          y:
-            - accuracy
-            - f1_score
-            - precision
-            - recall
+      - confusion_matrix.png
