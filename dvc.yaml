@@ -2,32 +2,17 @@ stages:
   preprocess:
     cmd: python preprocess.py
     deps:
-      - preprocess.py
-      - diabetes.csv
+    - preprocess.py
+    - diabetes.csv
     outs:
-      - train.csv
-      - test.csv
+    - train.csv
+    - test.csv
 
   train:
     cmd: python train.py
     deps:
-      - train.py
-      - train.csv
+    - train.py
+    - train.csv
     outs:
-      - model.pkl
+    - model.pkl
 
-  validate:
-    cmd: python validate.py
-    deps:
-      - validate.py
-      - test.csv
-      - model.pkl
-    outs:
-      - confusion_matrix.png
-    metrics:
-      - metrics.json  # tracked numeric metrics
-    plots:
-      - metrics.json:   # tracked as plots
-          template: default
-          x: branch
-          y: [accuracy, f1_score, precision, recall]
