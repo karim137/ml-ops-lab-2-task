@@ -28,9 +28,5 @@ stages:
       - path: metrics.json
         template: default
         x: branch
-        y:
-          - accuracy
-          - f1_score
-          - precision
-          - recall
+        y: ["accuracy", "f1_score", "precision", "recall"]
       - path: confusion_matrix.png
