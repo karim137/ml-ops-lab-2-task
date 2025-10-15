@@ -3,26 +3,26 @@ stages:
     cmd: python preprocess.py
     deps:
       - preprocess.py
-      - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\diabetes.csv
+      - diabetes.csv
     outs:
-      - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\train.csv
-      - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\test.csv
+      - train.csv
+      - test.csv
 
   train:
     cmd: python train.py
     deps:
       - train.py
-      - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\train.csv
+      - train.csv
     outs:
-      - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\model.pkl
+      - model.pkl
 
   validate:
     cmd: python validate.py
     deps:
       - validate.py
-      - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\test.csv
-      - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\model.pkl
+      - test.csv
+      - model.pkl
     outs:
-      - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\confusion_matrix.png
+      - confusion_matrix.png
     metrics:
-      - C:\Users\hankerz\OneDrive\ml-ops-lab-2-task\metrics.json
+      - metrics.json
