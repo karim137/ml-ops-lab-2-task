@@ -25,12 +25,12 @@ stages:
     metrics:
       - metrics.json
     plots:
-      - metrics.json:
-          template: default
-          x: branch
-          y:
-            - accuracy
-            - f1_score
-            - precision
-            - recall
-      - confusion_matrix.png
+      - path: metrics.json
+        template: default
+        x: branch
+        y:
+          - accuracy
+          - f1_score
+          - precision
+          - recall
+      - path: confusion_matrix.png
