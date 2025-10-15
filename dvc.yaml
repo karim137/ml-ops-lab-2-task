@@ -25,4 +25,6 @@ stages:
     outs:
       - confusion_matrix.png
     metrics:
-      - metrics.json
+      - metrics.json  # metrics to track across branches
+    plots:
+      - metrics.json  # numeric plots for comparison across branches
